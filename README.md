@@ -33,7 +33,9 @@ ubuntu$ apt-get update && apt-get install build-essential gcc-arm-none-eabi binu
 
 After running these commands, your Docker environment will be ready to build the firmware.
 However, you will need to modify the `conf_general.h` file to select the firmware you want to build.
-To enable the servo output, change the value for `SERVO_OUT_ENABLE` from 0 to 1.
+Since [March 31, 2021](https://github.com/vedderb/bldc/commit/fcb7e1215875cd44de676ca6323d2707722d85a7)
+you don't have to enable servo output during firmware building. It can be enabled from VESC_tool (App Settings > PPM).
+(For older versions, set `SERVO_OUT_ENABLE` to 1.)
 To choose which board to build the firmware for, un-comment the `.h` and `.c` files for your board.
 The boards that are currently supported by this repository are:
 
